@@ -176,6 +176,30 @@ async function startUp() {
         }
     }
     console.log(fo)
+    console.log('')
+    console.log('')
+    console.log('')
+    console.log(
+        `Mai nap (${new Date().getFullYear()}.${new Date().getMonth()}.${new Date().getDate()}.)`
+    )
+    console.log('<@&1117769320534134866>')
+    console.log('')
+    for (const val in fo.emberek) {
+        if (fo.emberek[val].műszak > 0) {
+            console.log(val + ' - ' + fo.emberek[val].műszak)
+        }
+    }
+    console.log('')
+    console.log('1 perces - ' + fo.egyperces)
+    console.log('Lemondott - ' + fo.lemondott)
+    console.log('')
+    console.log('Heti statisztika így néz ki jelenleg:')
+    console.log('')
+    console.log('Heti statisztika')
+    console.log('')
+    console.log(
+        'Az üzenetre kérlek reagáljatok annak függvényében, hogy holnap jelen tudtok-e lenni csapatidőbe. Köszi!'
+    )
 }
 
 startUp()
