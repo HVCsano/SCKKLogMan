@@ -4,6 +4,24 @@ import readline from 'node:readline'
 let akezdet = new Date().setHours(15, 0, 0, 0)
 let avege = new Date().setHours(18, 30, 0, 0)
 
+const tagok = [
+    'Kevin',
+    'Danelson',
+    'Meier',
+    'Edgar',
+    'Lucas',
+    'Lisa',
+    'Bryan',
+    'Windsor',
+    'Jackson',
+    'Jadon',
+    'Demyan',
+    'Cristobal',
+    'Bill',
+    'Jakob',
+    'Marco',
+]
+
 interface ember {
     műszak: number
     összesen: number
@@ -67,18 +85,20 @@ async function startUp() {
             )
             let cuccman = logs[index].split(':')[4].split('/')[0].slice(1, -1)
             if (cuccman !== 'senki') {
-                if (fo.emberek[cuccman]) {
-                    if (akezdet < most && most < avege) {
-                        fo.emberek[cuccman].összesen++
-                        fo.emberek[cuccman].műszak++
+                if (tagok.includes(cuccman.split(' ')[0])) {
+                    if (fo.emberek[cuccman]) {
+                        if (akezdet < most && most < avege) {
+                            fo.emberek[cuccman].összesen++
+                            fo.emberek[cuccman].műszak++
+                        } else {
+                            fo.emberek[cuccman].összesen++
+                        }
                     } else {
-                        fo.emberek[cuccman].összesen++
-                    }
-                } else {
-                    if (akezdet < most && most < avege) {
-                        fo.emberek[cuccman] = { műszak: 1, összesen: 1 }
-                    } else {
-                        fo.emberek[cuccman] = { műszak: 0, összesen: 1 }
+                        if (akezdet < most && most < avege) {
+                            fo.emberek[cuccman] = { műszak: 1, összesen: 1 }
+                        } else {
+                            fo.emberek[cuccman] = { műszak: 0, összesen: 1 }
+                        }
                     }
                 }
             }
