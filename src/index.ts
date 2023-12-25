@@ -186,7 +186,7 @@ async function startUp() {
     console.log('')
     for (const val in fo.emberek) {
         if (fo.emberek[val].műszak > 0) {
-            console.log(val + ' - ' + fo.emberek[val].műszak)
+            console.log(val.split(' ')[0] + ' - ' + fo.emberek[val].műszak)
         }
     }
     console.log('')
@@ -195,7 +195,11 @@ async function startUp() {
     console.log('')
     console.log('Heti statisztika így néz ki jelenleg:')
     console.log('')
-    console.log('Heti statisztika')
+    for (const val in fo.emberek) {
+        if (fo.emberek[val].összesen > 0) {
+            console.log(val.split(' ')[0] + ' - ' + fo.emberek[val].összesen)
+        }
+    }
     console.log('')
     console.log(
         'Az üzenetre kérlek reagáljatok annak függvényében, hogy holnap jelen tudtok-e lenni csapatidőbe. Köszi!'
