@@ -88,7 +88,10 @@ async function startUp() {
                 'Törlődött a következő hívás: ' + i + ' (lemondta a játékos)'
             )
         )
-        if (lemondott !== -1) {
+        const lemondott2 = logs.findLastIndex((element) =>
+            element.endsWith('TAXI elfogadta a következő hívást: ' + i)
+        )
+        if (lemondott !== -1 && lemondott2 == -1) {
             let most = new Date().setHours(
                 Number(
                     logs[lemondott]
