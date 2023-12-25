@@ -1,0 +1,23 @@
+{
+    "name": "sckklogman",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "run-p dev:ts dev:nodemon",
+        "dev:ts": "tsc --watch",
+        "dev:nodemon": "nodemon"
+    },
+    "keywords": [],
+    "author": "",
+    "type": "module",
+    "license": "ISC",
+    "dependencies": {
+        "nodemon": "^3.0.2",
+        "npm-run-all2": "^6.1.1",
+        "typescript": "^5.3.3"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.5"
+    }
+}
